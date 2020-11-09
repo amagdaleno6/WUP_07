@@ -41,7 +41,8 @@ with(kRdata, table(Sex, result))
 ```{r}
 barchartGC(~result + Sex,data=kRdata, main ="Frequency Bar Chart")
 ```
-
+  
+This graph shows that there was a larger number of females than males in the alive category.  It also shows that there was a larger number of males than females in the dead category. 
   
 ### this bar chart is displaying in total frequency terms our data.  Clearly there are a lot less dead people than alive people as is reflected by the sizes of the bars in the display.  
 
@@ -49,7 +50,7 @@ barchartGC(~result + Sex,data=kRdata, main ="Frequency Bar Chart")
 barchartGC(~result + Sex,data=kRdata,type = "percent", main ="Frequency Bar Chart")
 ```
 
-
+This graph displays the information in percentages.  It shows that out of those that are alive, approximately 59% are females and 38% are males.  Of those that are dead, approximately 38% are females and 62% are males.  If dying is independent of sex, it is unexpected to see a much larger percentage of males dead as opposed to females.       
 
 
   
@@ -61,6 +62,8 @@ rowPerc(table1)
 colPerc(table1)
 ```
 
+The table shows that out the people who were alive, 56% were female and 44% were males.  Of those that were dead, 36% were female and 64% were males.  This is consistent with our previous observation that males have a higher frequency of dying that females do.  
+
 ## Inferential results 
 
 ```{r}
@@ -68,7 +71,8 @@ chisq.test(table1)
 chisqtestGC(table1)
 fisher.test(table1)
 ```
-
+The Fisher's Exact Test results reflects a low p-value and a 95% confidence level between 1.4 and 3.9.  The odds ratio of 2.3 to 1 shows that males are 2.3 times more likely to die than females as a result of covid. 
 
 ## Conclusions
 
+ The graphical, numerical, and inferential results show that males are more likely to die than females as a result of covid19.  The results of the Fisher's Exact Test shows that Males are 2.3 times more likely to die than females.  As a result, we will reject the null hypothesis stating that men and women are equally likely to die of covid19.   
